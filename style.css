@@ -193,8 +193,8 @@ height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* SERVICIOS */
-.services-section { background-color: var(--light-bg); padding: 10px 0; }
-.section-title { font-size: 2.5rem; color: var(--black); margin-bottom: 20px; }
+.services-section { background-color: var(--light-bg); padding: 30px 0; }
+.section-title { font-size: 2.5rem; color: var(--black); margin-bottom: 30px; }
 .section-subtitle { max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem; line-height: 1.6; color: var(--dark-grey); }
 .mobile-service-nav { display: none; }
 .services-carousel-wrapper { display: flex; align-items: center; justify-content: center; position: relative; max-width: 1400px; margin: 0 auto; }
