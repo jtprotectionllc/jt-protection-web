@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Central Florida Private Security. Serving Orlando and Central Florida's most discerning clients.">
+    <meta name="format-detection" content="telephone=no">
     <title>JT Protection Services | Central Florida</title>
-    
+   
+<link rel="icon" type="image/png" sizes="192x192" href="./favicon.png">
+
+<!-- Para iPhone y iPad (Añadir a pantalla de inicio) -->
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SecurityService",
       "name": "JT Protection Services",
-      "areaServed": ["Orlando, FL", "Orange County", "Greater Central Florida"],
+      "areaServed": ["Orlando, FL", "Greater Central Florida"],
       "description": "Where High Standards Meet Trusted Protection.",
       "telephone": "(321) 848-6744",
-      "email": "jtprotectionllc@gmail.com"
+      "email": "jtprotectionllc@gmail.com",
+      "url": "https://www.jtprotectionservices.com/"
     }
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -51,10 +58,10 @@
     <!-- HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-slider" id="hero-slider">
-            <div class="slide active" style="background-image: url('/public/img/portada2.png');"></div>
-            <div class="slide" style="background-image: url('/public/img/portada1.png');"></div>
-            <div class="slide" style="background-image: url('/public/img/portada3.png');"></div>
-            <div class="slide" style="background-image: url('/public/img/portada4.png');"></div>
+            <div class="slide active" style="background-image: url('/public/img/cover-jt-protection-services.webp');"></div>
+            <div class="slide" style="background-image: url('/public/img/cover-jt-protection-services2.webp');"></div>
+            <div class="slide" style="background-image: url('/public/img/cover-jt-protection-services3.webp');"></div>
+            
         </div>
         
         <div class="hero-fade-bottom"></div>
@@ -81,48 +88,59 @@
             <p class="standard-copy">At JT Protection Services, we elevate professional security through rigorous discipline, unwavering reliability, and sharp attention to detail. When your safety is in our hands, you have absolute peace of mind.</p>
         </div>
         
-        <div class="gallery-marquee sr-fade">
+        <div class="gallery-marquee">
             <div class="marquee-track">
-                <img src="/public/img/s4.png" alt="Gallery image">
-                <img src="/public/img/s12.png" alt="Gallery image">
-                <img src="/public/img/s13.png" alt="Gallery image">
-                <img src="/public/img/foto.png" alt="Gallery image">
-                <img src="/public/img/s4.png" alt="Gallery image">
-                <img src="/public/img/s12.png" alt="Gallery image">
-                <img src="/public/img/s13.png" alt="Gallery image">
+                <img src="/public/img/standard-jt-protection-services (1).webp" alt="Security event operation" loading="lazy">
+                <img src="/public/img/standard-jt-protection-services-2.webp" alt="Private residence security" loading="lazy">
+                <img src="/public/img/standard-jt-protection-services-3.webp" alt="Professional security officers" loading="lazy">
+                <img src="/public/img/standard-jt-protection-services-4.webp" alt="Executive protection details" loading="lazy">
+                <img src="/public/img/office-security.webp" alt="Commercial security patrol" loading="lazy">
+                <img src="/public/img/warehouse-security.webp" alt="Warehouse security" loading="lazy">
+                <img src="/public/img/discreet-security-detail-jt.webp" alt="Discreet security detail" loading="lazy">
             </div>
         </div>
     </section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services-section">
-        <div class="container text-center sr-bottom">
+        <div class="container text-center sr-fade">
             <span class="eyebrow">Tailored Protection</span>
             <h2 class="section-title">Security Solutions for Central Florida</h2>
             <p class="section-subtitle">Every business faces different security challenges. Our officers are trained to adapt to your environment, protecting your customers, employees, property, and assets with professionalism and vigilance.</p>
+        </div>
+
+        <div class="mobile-service-nav sr-fade">
+            <select id="mobile-service-select">
+                <option value="0">Event Security</option>
+                <option value="1">Residential Security</option>
+                <option value="2">Commercial Security</option>
+                <option value="3">Warehouse Security</option>
+                <option value="4">Construction Site Security</option>
+                <option value="5">Emergency & Disaster Response</option>
+                <option value="6">Unarmed Security (General)</option>
+            </select>
         </div>
 
         <div class="services-carousel-wrapper sr-fade">
             <button class="arrow left-arrow" id="serv-prev">&#10094;</button>
             
             <div class="services-track-container" id="services-track">
-                
-                <!-- CARD 1: Event Security -->
+                <!-- CARD 1 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio5.png" alt="Event Security">
+                            <img src="/public/img/event-security-jt.webp" alt="Event Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Event Security</h4>
                                 <p class="teaser">Composed, professional coverage for private parties, galas, and VIP gatherings.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="event">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Event Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio5.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/event-security-jt.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Event Security</h4>
@@ -136,22 +154,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 2: Residential Security -->
+                <!-- CARD 2 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio3.png" alt="Residential Security">
+                            <img src="/public/img/residential-security-1-jt.webp" alt="Residential Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Residential Security</h4>
                                 <p class="teaser">Discreet protection for private residences and gated communities.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="residential">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Residential Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio3.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/residential-security-1-jt.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Residential Security</h4>
@@ -165,22 +183,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 3: Commercial Security -->
+                <!-- CARD 3 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio2.png" alt="Commercial Security">
+                            <img src="/public/img/comercial-security-jt-protection.webp" alt="Commercial Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Commercial Security</h4>
                                 <p class="teaser">Professional coverage that protects your property, your team, and your reputation.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="commercial">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Commercial Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio2.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/comercial-security-jt-protection.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Commercial Security</h4>
@@ -194,22 +212,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 4: Warehouse Security -->
+                <!-- CARD 4 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/warehouse-security.png" alt="Warehouse Security">
+                            <img src="/public/img/warehouse-security.webp" alt="Warehouse Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Warehouse Security</h4>
                                 <p class="teaser">Reliable coverage for distribution centers and logistics facilities.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="warehouse">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Warehouse Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/warehouse-security.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/warehouse-security.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Warehouse Security</h4>
@@ -223,22 +241,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 5: Construction Site Security -->
+                <!-- CARD 5 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio7.png" alt="Construction Site Security">
+                            <img src="/public/img/construction-site-security.webp" alt="Construction Site Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Construction Site Security</h4>
                                 <p class="teaser">On-site protection for active job sites and the equipment on them.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="construction">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Construction Site Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio7.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/construction-site-security.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Construction Site Security</h4>
@@ -252,22 +270,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 6: Emergency Security -->
+                <!-- CARD 6 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio8.png" alt="Emergency Security">
+                            <img src="/public/img/emergency-disaster-security-jt.webp" alt="Emergency Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Emergency & Disaster Response</h4>
                                 <p class="teaser">A trusted presence before, during, and after severe weather events.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="emergency">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Emergency Response">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio8.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/emergency-disaster-security-jt.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Emergency & Disaster Response</h4>
@@ -281,22 +299,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 7: Unarmed Security -->
+                <!-- CARD 7 -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="/public/img/servicio6.png" alt="Unarmed Security">
+                            <img src="/public/img/unarmed-security-jt.webp" alt="Unarmed Security" loading="lazy">
                             <div class="front-overlay">
                                 <h4 class="card-title">Unarmed Security (General)</h4>
                                 <p class="teaser">A professional, unarmed presence for any situation that calls for one.</p>
                                 <div class="card-actions">
-                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="unarmed">Request</a>
+                                    <a href="#contacto" class="btn btn-primary btn-request" data-service="Unarmed Security">Request</a>
                                     <button class="flip-btn front-flip">Learn More <span>&#10227;</span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <img src="/public/img/servicio6.png" class="back-blur-img" alt="Background">
+                            <img src="/public/img/unarmed-security-jt.webp" class="back-blur-img" alt="Background" loading="lazy">
                             <div class="back-overlay">
                                 <div class="back-header">
                                     <h4>Unarmed Security (General)</h4>
@@ -322,10 +340,9 @@
             <div class="coverage-left sr-left">
                 <span class="eyebrow">Service Area</span>
                 <h2 class="coverage-title">Proudly Based in Central Florida</h2>
-                <p class="coverage-desc">JT Protection Services is based in Orlando, serving Orange County and the greater Central Florida area. We know the venues, neighborhoods, and business districts we protect.</p>
+                <p class="coverage-desc">JT Protection Services is based in Orlando, serving the greater Central Florida area. We know the venues, neighborhoods, and business districts we protect.</p>
                 <ul class="coverage-list">
                     <li>Orlando, FL</li>
-                    <li>Orange County</li>
                     <li>Greater Central Florida</li>
                 </ul>
                 <div class="coverage-cta">
@@ -336,29 +353,25 @@
             
             <div class="coverage-right sr-right">
                 <video autoplay muted loop playsinline class="coverage-video">
-                    <source src="/public/img/florida1.mp4" type="video/mp4">
+                    <source src="/public/img/florida2.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
             </div>
         </div>
     </section>
 
-    <!-- NUESTRO EQUIPO (CON NUEVO ACORDEÓN) -->
+    <!-- NUESTRO EQUIPO -->
     <section id="equipo" class="team-section">
         <div class="container container-large sr-bottom">
             <div class="process-grid">
-                <!-- Columna Izquierda: Títulos y Botón -->
                 <div class="process-info">
                     <span class="eyebrow">The JT Difference</span>
                     <h2 class="section-title">What Sets Our Team Apart</h2>
-                    <p class="section-subtitle">JT Protection Services was founded on one idea: security should feel personal. We take the time to understand your property, your event, or your business, and we solve problems before they grow. Every officer we place is chosen for professionalism, composure, and follow-through.</p>
+                    <p class="section-subtitle">JT Protection Services was founded on one idea: security compliance should feel personal. We take the time to understand your property, your event, or your business, and we solve problems before they grow. Every officer we place is chosen for professionalism, composure, and follow-through.</p>
                     <a href="#contacto" class="btn btn-primary mt-2">Request a Quote</a>
                 </div>
                 
-                <!-- Columna Derecha: Acordeón -->
                 <div class="process-accordion">
-                    
-                    <!-- Item 1 (Activo por defecto) -->
                     <div class="accordion-item active">
                         <div class="accordion-header">
                             <span class="acc-num">01</span>
@@ -371,7 +384,6 @@
                         </div>
                     </div>
                     
-                    <!-- Item 2 -->
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <span class="acc-num">02</span>
@@ -384,7 +396,6 @@
                         </div>
                     </div>
                     
-                    <!-- Item 3 -->
                     <div class="accordion-item">
                         <div class="accordion-header">
                             <span class="acc-num">03</span>
@@ -396,7 +407,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -406,42 +416,47 @@
                 <span class="eyebrow">Leadership</span>
                 <h2 class="section-title">Meet The Team</h2>
             </div>
+        </div>
             
-            <div class="team-carousel-wrapper">
-                <button class="arrow left-arrow team-arrow" id="team-prev">&#10094;</button>
-                
-                <div class="team-cards" id="team-track">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="public/img/foto.png" alt="Alex Rivera">
-                        </div>
-                        <div class="team-info">
-                            <h4>Alex Rivera</h4>
-                            <p>Event Security Lead</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="public/img/foto.png" alt="Jordan Lee">
-                        </div>
-                        <div class="team-info">
-                            <h4>Jordan Lee</h4>
-                            <p>Residential Security Officer</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="public/img/foto.png" alt="Morgan Diaz">
-                        </div>
-                        <div class="team-info">
-                            <h4>Morgan Diaz</h4>
-                            <p>Site Supervisor</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="team-carousel-wrapper sr-fade">
+            <button class="arrow left-arrow team-arrow" id="team-prev">&#10094;</button>
+            
+            <div class="team-cards" id="team-track">
+    <!-- Tarjeta de Julia -->
+    <div class="team-card" id="julia-card">
+        <div class="team-img-wrapper">
+            <img src="public/img/julia-n-tulian-founder-jt-protection-services.jpg" alt="Julia N. Tulian" loading="lazy">
+        </div>
+        <div class="team-info">
+            <h4>Julia N. Tulian</h4>
+            <p>Founder & Director</p>
+        </div>
+    </div>
+    
+    <!-- Tarjeta de Angel -->
+    <div class="team-card" id="angel-card">
+        <div class="team-img-wrapper">
+            <img src="public/img/angel-j-oropeza-cargo-operations-jt-protection-services.jpg" alt="Angel J. Oropeza" loading="lazy">
+        </div>
+        <div class="team-info">
+            <h4>Angel J. Oropeza</h4>
+            <p>Field Operations Manager</p>
+        </div>
+    </div>
+    
+    <!-- Tarjeta de Rocio -->
+    <div class="team-card" id="rocio-card">
+        <div class="team-img-wrapper">
+            <img src="public/img/sales-rocio-m-tuilia-jt-protection-services.jpg" alt="Rocio M. Tuilian" loading="lazy">
+        </div>
+        <div class="team-info">
+            <h4>Rocio M. Tuilian</h4>
+            <p>Business Development</p>
+        </div>
+    </div>
+</div>
 
-                <button class="arrow right-arrow team-arrow" id="team-next">&#10095;</button>
-            </div>
+            <button class="arrow right-arrow team-arrow" id="team-next">&#10095;</button>
         </div>
     </section>
 
@@ -449,28 +464,27 @@
     <section id="trabajar" class="careers-section sr-bottom">
         <div class="container container-large">
             <div class="careers-grid">
-                <!-- Columna Izquierda: Imagen -->
                 <div class="careers-image-col sr-left">
-                    <img src="/public/img/work-with-us.png" alt="Join JT Protection Services" class="careers-img">
+                    <img src="/public/img/join-the-team.webp" alt="Join JT Protection Services" class="careers-img" loading="lazy">
                 </div>
                 
-                <!-- Columna Derecha: Textos y Formulario -->
                 <div class="careers-content-col sr-right">
                     <span class="eyebrow">Careers</span>
                     <h2 class="section-title">Join Our Team</h2>
                     <p class="section-subtitle">Build a rewarding career with Central Florida's premier security firm. We are always looking for composed, professional officers.</p>
                     
-                    <form action="mailto:jtprotectionllc@gmail.com" method="post" enctype="multipart/form-data" class="modern-form">
+                    <form action="https://script.google.com/macros/s/AKfycbzjXPspLX452o7T56T2KQILoInDNQ_wXU7Rtj-ZB06VGcwgxDcwvBdMAl9SJbSZfsUP/exec" method="post" enctype="multipart/form-data" class="modern-form js-form">
+                        <input type="hidden" name="form_type" value="Job Application">
                         <div class="form-row">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-single">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
                         </div>
                         <div class="file-upload-wrapper">
                             <label for="resume">Attach your Resume (PDF or DOCX)</label>
-                            <input type="file" id="resume" accept=".pdf,.doc,.docx" required class="file-input">
+                            <input type="file" id="resume" name="resume_file" accept=".pdf,.doc,.docx" required class="file-input">
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-apply">Apply Now</button>
@@ -491,37 +505,37 @@
             </div>
             
             <div class="contact-form-wrapper sr-right">
-                <form action="mailto:jtprotectionllc@gmail.com" method="post" class="modern-form main-form">
-                    
+                <form action="https://script.google.com/macros/s/AKfycbzjXPspLX452o7T56T2KQILoInDNQ_wXU7Rtj-ZB06VGcwgxDcwvBdMAl9SJbSZfsUP/exec" method="post" class="modern-form main-form js-form">
+                    <input type="hidden" name="form_type" value="Client Quote Request">
                     <h3 class="mobile-form-title">Contact Us</h3>
                     
                     <div class="form-row">
-                        <input type="text" placeholder="First Name" required>
-                        <input type="text" placeholder="Last Name" required>
+                        <input type="text" name="first_name" placeholder="First Name" required>
+                        <input type="text" name="last_name" placeholder="Last Name" required>
                     </div>
                     <div class="form-row">
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div class="form-row">
-                        <input type="text" placeholder="Company / Property Name">
-                        <input type="text" placeholder="Location / Area" required>
+                        <input type="text" name="company" placeholder="Company / Property Name">
+                        <input type="text" name="location" placeholder="Location / Area" required>
                     </div>
                     
                     <div class="form-single">
-                        <select id="service-needed" required>
+                        <select name="service" id="service-needed" required>
                             <option value="" disabled selected>Service Needed</option>
-                            <option value="event">Event Security</option>
-                            <option value="residential">Residential Security</option>
-                            <option value="commercial">Commercial Security</option>
-                            <option value="warehouse">Warehouse Security</option>
-                            <option value="construction">Construction Site Security</option>
-                            <option value="emergency">Emergency Response</option>
-                            <option value="unarmed">Unarmed Security</option>
+                            <option value="Event Security">Event Security</option>
+                            <option value="Residential Security">Residential Security</option>
+                            <option value="Commercial Security">Commercial Security</option>
+                            <option value="Warehouse Security">Warehouse Security</option>
+                            <option value="Construction Site Security">Construction Site Security</option>
+                            <option value="Emergency Response">Emergency Response</option>
+                            <option value="Unarmed Security">Unarmed Security</option>
                         </select>
                     </div>
                     
-                    <textarea placeholder="Tell us about your event or property..." rows="2" required></textarea>
+                    <textarea name="message" placeholder="Tell us about your event or property..." rows="2" required></textarea>
                     
                     <select name="contact_method" required class="full-width-select">
                         <option value="" disabled selected>Preferred Contact Method</option>
@@ -571,12 +585,12 @@
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <img src="/public/img/jt-protection-services-logo-blanco.jpg" alt="JT Protection Services Logo" class="footer-logo">
+                <img src="/public/img/jt-protection-services-logo-blanco.jpg" alt="JT Protection Services Logo" class="footer-logo" loading="lazy">
                 <p class="footer-slogan">Central Florida Security Services<br>Your safety, our standard.</p>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>Phone: (321) 848-6744</p>
+                <p>Phone: <a href="tel:3218486744" class="footer-phone">(321) 848-6744</a></p>
                 <p>Email: jtprotectionllc@gmail.com</p>
                 <a href="https://wa.me/13218486744" target="_blank" class="footer-link">WhatsApp</a>
             </div>
@@ -593,17 +607,16 @@
             <div class="footer-col">
                 <h4>Coverage Area</h4>
                 <p>Orlando, FL</p>
-                <p>Orange County</p>
                 <p>Greater Central Florida</p>
                 <a href="#contacto" class="footer-link mt-2">Need another destination? Stop</a>
             </div>
         </div>
         <div class="footer-bottom">
-    <p>&copy; 2026 JT Protection Services LLC. All rights reserved. | Developed by <a href="https://www.kayso.com.ar" target="_blank" style="color: #666; text-decoration: none; font-weight: bold;">KA&SO</a></p>
-    <div class="legal-links">
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-    </div>
-</div>
+            <p>&copy; 2026 JT Protection Services LLC. All rights reserved. | Developed by <a href="https://www.kayso.com.ar" target="_blank" style="color: #666; text-decoration: none; font-weight: bold;">KA&SO</a></p>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
     </footer>
 
     <script type="module" src="/script.js"></script>

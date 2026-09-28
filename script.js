@@ -2,8 +2,8 @@ import './style.css';
 document.addEventListener('DOMContentLoaded', () => {
     // EFECTO TYPEWRITER
     const textArray = [
-        " Safety, Our Standard.", 
-        " Trust, Our Commitment."
+        "Safety, Our Standard.", 
+        "Trust, Our Commitment."
     ];
     let wordIndex = 0;
     let charIndex = 0;
@@ -53,18 +53,59 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('services-track');
     const btnPrev = document.getElementById('serv-prev');
     const btnNext = document.getElementById('serv-next');
+    
+    const scrollBehav = window.innerWidth > 768 ? 'smooth' : 'auto';
+
     if (btnNext && track) {
-        btnNext.addEventListener('click', () => track.scrollBy({ left: 320, behavior: 'smooth' }));
-        btnPrev.addEventListener('click', () => track.scrollBy({ left: -320, behavior: 'smooth' }));
+        // Desplaza 350px (una tarjeta) en lugar del 80% de la pantalla
+        btnNext.addEventListener('click', () => track.scrollBy({ left: 700, behavior: scrollBehav }));
+        btnPrev.addEventListener('click', () => track.scrollBy({ left: -700, behavior: scrollBehav }));
     }
     
+    // LÓGICA DROPDOWN DE SERVICIOS MÓVIL (Doble Sincronización)
+    const mobileSelect = document.getElementById('mobile-service-select');
+    if (mobileSelect && track) {
+        mobileSelect.addEventListener('change', (e) => {
+            const index = parseInt(e.target.value);
+            const card = track.children[index];
+            if (card) {
+                const scrollPos = card.offsetLeft - track.offsetLeft - 20;
+                track.scrollTo({ left: scrollPos, behavior: 'smooth' });
+            }
+        });
+
+        let scrollTimeout;
+        track.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                let closestIndex = 0;
+                let minDistance = Infinity;
+                const trackCenter = track.getBoundingClientRect().left + (track.offsetWidth / 2);
+                
+                Array.from(track.children).forEach((card, index) => {
+                    const cardCenter = card.getBoundingClientRect().left + (card.offsetWidth / 2);
+                    const distance = Math.abs(cardCenter - trackCenter);
+                    
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+                
+                if (mobileSelect.value !== closestIndex.toString()) {
+                    mobileSelect.value = closestIndex.toString();
+                }
+            }, 100); 
+        }, { passive: true });
+    }
+
     // SLIDER DE NUESTRO EQUIPO (MÓVIL)
     const teamTrack = document.getElementById('team-track');
     const teamPrev = document.getElementById('team-prev');
     const teamNext = document.getElementById('team-next');
     if (teamNext && teamTrack) {
-        teamNext.addEventListener('click', () => teamTrack.scrollBy({ left: 320, behavior: 'smooth' }));
-        teamPrev.addEventListener('click', () => teamTrack.scrollBy({ left: -320, behavior: 'smooth' }));
+        teamNext.addEventListener('click', () => teamTrack.scrollBy({ left: window.innerWidth * 0.8, behavior: scrollBehav }));
+        teamPrev.addEventListener('click', () => teamTrack.scrollBy({ left: -(window.innerWidth * 0.8), behavior: scrollBehav }));
     }
 
     // SCROLL REVEAL
@@ -102,16 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const currentItem = header.parentElement;
-            
-            // Si ya está activo, no hacemos nada para que siempre haya uno abierto
             if (currentItem.classList.contains('active')) return;
 
-            // Cerramos todos
             document.querySelectorAll('.accordion-item').forEach(item => {
                 item.classList.remove('active');
             });
 
-            // Abrimos solo al que se le hizo clic
             currentItem.classList.add('active');
         });
     });
@@ -125,6 +162,68 @@ document.addEventListener('DOMContentLoaded', () => {
             const serviceType = btn.getAttribute('data-service');
             if (serviceType && serviceSelect) {
                 serviceSelect.value = serviceType;
+            }
+        });
+    });
+
+    // ENVÍO DE FORMULARIO SIN RECARGAR LA PÁGINA (CON SOPORTE PARA ARCHIVOS BASE64)
+    const jsForms = document.querySelectorAll('.js-form');
+    jsForms.forEach(form => {
+        form.addEventListener('submit', e => {
+            e.preventDefault(); 
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            const actionUrl = form.getAttribute('action');
+            const fileInput = form.querySelector('input[type="file"]');
+            
+            let payload = {};
+            const formData = new FormData(form);
+            formData.forEach((value, key) => {
+                if (key !== 'resume_file') {
+                    payload[key] = value;
+                }
+            });
+
+            const sendData = (dataPayload) => {
+                fetch(actionUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(dataPayload)
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert('Success! Your message has been sent.');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                })
+                .catch(error => {
+                    alert('An error occurred. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                });
+            };
+
+            if (fileInput && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const base64Data = event.target.result.split(',')[1];
+                    payload.fileData = base64Data;
+                    payload.mimeType = file.type;
+                    payload.fileName = file.name;
+                    sendData(payload);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                sendData(payload);
             }
         });
     });
