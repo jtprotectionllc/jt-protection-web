@@ -22,6 +22,11 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+/* iPhone: "clip" recorta igual que hidden pero sin convertir el body en
+   una zona de scroll aparte (eso es lo que hace que Safari "salte") */
+@supports (overflow-x: clip) {
+    html, body { overflow-x: clip; }
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -345,7 +350,7 @@ height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
     .coverage-grid, .contact-grid { flex-direction: column; height: auto; max-height: none; gap: 0; }
     .coverage-left { border-radius: 0; width: 100%; height: auto; margin: 0; padding: 60px 8%; }
     .coverage-title { font-size: 2.2rem; }
-    .coverage-right { width: 100%; height: 50vh; }
+    .coverage-right { width: 100%; height: 50vh; height: 50svh; } /* svh: no cambia al scrollear en iPhone */
     .coverage-video { width: 100%; height: 100%; max-height: none; border-radius: 0; }
     
     .careers-grid, .process-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
@@ -361,8 +366,10 @@ height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
 @media (max-width: 768px) {
     .hamburger { display: flex; outline: none; border: none; }
     
-    .nav-links { position: fixed; top: 0; right: -400px; width: 80%; max-width: 350px; height: 100vh; background-color: var(--black); flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 100px 0 40px 0; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid rgba(255, 255, 255, 0.1); box-shadow: -10px 0 30px rgba(0, 0, 0, 0.9); z-index: 1000; }
-    .nav-links.active { right: 0; }
+    /* Menú lateral: se esconde con transform (no con right negativo) para que
+       en iPhone no "ensanche" la página cuando está cerrado */
+    .nav-links { position: fixed; top: 0; right: 0; width: 80%; max-width: 350px; height: 100vh; height: 100dvh; background-color: var(--black); flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 100px 0 40px 0; transform: translateX(100%); visibility: hidden; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s; border-left: 1px solid rgba(255, 255, 255, 0.1); box-shadow: -10px 0 30px rgba(0, 0, 0, 0.9); z-index: 1000; }
+    .nav-links.active { transform: translateX(0); visibility: visible; }
         .nav-links { gap: 0; }
     .nav-links li { margin: 0; width: 100%; list-style: none; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
     .nav-links li:first-child { border-top: 1px solid rgba(255, 255, 255, 0.15); }
