@@ -228,3 +228,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// ===== URLS LIMPIAS: /services, /contact, etc. =====
+const SECCIONES = ['services', 'coverage-area', 'our-team', 'join-our-team', 'contact'];
+
+function irASeccion(id, suave = true) {
+    const destino = document.getElementById(id);
+    if (destino) destino.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'start' });
+}
+
+// Clic en links internos (menú, botones, footer, logo)
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    e.preventDefault();
+
+    const id = link.getAttribute('href').slice(1);
+    if (SECCIONES.includes(id)) {
+        history.pushState(null, '', '/' + id);
+        irASeccion(id);
+    } else {
+        history.pushState(null, '', '/');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+
+// Al entrar directo a /services, /contact, etc., o al usar "atrás"
+function seccionDesdeURL(suave) {
+    const hash = location.hash.slice(1);
+    if (hash) history.replaceState(null, '', SECCIONES.includes(hash) ? '/' + hash : location.pathname);
+
+    const ruta = location.pathname.replace(/^\/|\/$/g, '');
+    if (SECCIONES.includes(ruta)) irASeccion(ruta, suave);
+    else if (ruta === '') window.scrollTo({ top: 0, behavior: suave ? 'smooth' : 'auto' });
+}
+window.addEventListener('load', () => seccionDesdeURL(false));
+window.addEventListener('popstate', () => seccionDesdeURL(true));

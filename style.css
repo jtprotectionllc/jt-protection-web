@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 .mt-2 { margin-top: 10px; }
 
 /* FIX NAVIGATION SCROLL OFFSETS */
-#servicios, #equipo, #trabajar, #contacto {
+#services, #our-team, #join-our-team, #contact {
     scroll-margin-top: 90px;
 }
 
@@ -117,7 +117,7 @@ a[href^="tel"] {
 /* HERO SECTION */
 .hero {
     position: relative;
-    height: calc(100vh - 85px);   /* respaldo para navegadores viejos */
+   height: calc(100vh - 85px);   /* respaldo para navegadores viejos */
 height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
     margin-top: 85px; 
     background-color: var(--black);
@@ -341,7 +341,7 @@ height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
 .legal-links a:hover { color: var(--gold); }
 
 @media (max-width: 992px) {
-    .coverage-section { height: auto; min-height: 100vh; padding: 85px 0 0 0; }
+    .coverage-section { height: auto; min-height: 100vh; min-height: 100svh; padding: 85px 0 0 0; }
     .coverage-grid, .contact-grid { flex-direction: column; height: auto; max-height: none; gap: 0; }
     .coverage-left { border-radius: 0; width: 100%; height: auto; margin: 0; padding: 60px 8%; }
     .coverage-title { font-size: 2.2rem; }
