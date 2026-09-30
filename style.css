@@ -468,7 +468,7 @@ height: calc(100svh - 85px);  /* alto fijo en iPhone: no cambia al scrollear */
 
     .form-row { flex-direction: column; gap: 0; }
     .careers-img { min-height: 380px; height: 380px; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-    .modern-form input, .modern-form select, .modern-form textarea { padding: 12px 15px; font-size: 0.9rem; }
+    .modern-form input, .modern-form select, .mwodern-form textarea { padding: 12px 15px; font-size: 0.9rem; }
     .btn-apply { padding: 12px 25px; font-size: 0.95rem; width: 90%; margin-bottom: 20px; }
     
     .extra-box { padding: 15px; flex-direction: row; text-align: left; align-items: center; gap: 10px; }
